@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 
-export class NewsItem extends Component {
+const NewsItem=(props)=> {
 
-    render() {
-        let { title, description, imageUrl, newsUrl, author, date,source } = this.props
+    
+        let { title, description, imageUrl, newsUrl, author, date,source } =  props
         return (
             <div className='my-3' >
                 <div className="card">
@@ -12,7 +12,7 @@ export class NewsItem extends Component {
                                 justifyContent:'flex-end',
                                 position:'absolute',
                                 right:'0'
-                            }}>
+                            }}> 
                     <span className="badge rounded-pill bg-danger" >{source}</span>
                 </div>
                     <img src={!imageUrl ? "https://www.livemint.com/lm-img/img/2024/06/27/1600x900/fefeefe_1699856766897_1719483463678.jpg" : imageUrl} className="card-img-top" alt="..." />
@@ -25,7 +25,7 @@ export class NewsItem extends Component {
                 </div>
             </div>
         )
-    }
+    
 }
 
 export default NewsItem
